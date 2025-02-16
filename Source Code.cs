@@ -14,7 +14,7 @@ namespace CalculatorWithCSharpBasics
                 try
                 {
                     Console.Write("Enter the first number:");
-                    num1 = Convert.ToInt32(Console.ReadLine());
+                    num1 = double.Parse(Console.ReadLine());
                 }
                 catch (Exception)
                 {
@@ -26,7 +26,7 @@ namespace CalculatorWithCSharpBasics
                 try
                 {
                     Console.Write("Enter the second number:");
-                    num2 = Convert.ToInt32(Console.ReadLine());
+                    num2 = double.Parse(Console.ReadLine());
                 }
                 catch (Exception)
                 {
@@ -36,9 +36,9 @@ namespace CalculatorWithCSharpBasics
                 }
             symbol:
                 Console.Write("Enter the operator (/,+,-,*):");
-                string symbol = Console.ReadLine();
+                string Operator = Console.ReadLine();
 
-                switch (symbol)
+                switch (Operator)
                 {
                     case "+":
                         res = num1 + num2;
@@ -62,8 +62,13 @@ namespace CalculatorWithCSharpBasics
                 }                
                 Console.Write("Do you want to continue (y/n):");
                 Answer = Console.ReadLine();
+                if (Answer.ToLower() != "y" && Answer.ToLower() != "yes")
+                {
+                    Console.Write("Are Sure? if you want to continue enter (y): ");
+                    Answer = Console.ReadLine();
+                }
             }
-            while (Answer == "y" || Answer == "Y" || Answer == "Yes" || Answer == "YES" || Answer == "yes");
+            while (Answer.ToLower() == "y" || Answer.ToLower() == "yes");
         }
     }
 
