@@ -53,6 +53,11 @@ namespace CalculatorWithCSharpBasics
                         Console.WriteLine("Multiplication: " + res);
                         break;
                     case "/":
+                        if (num2 == 0)
+                        {
+                            Console.WriteLine("cannot divide by zero (-_-).");
+                            goto symbol;
+                        }
                         res = num1 / num2;
                         Console.WriteLine("Division: " + res);
                         break;
@@ -64,7 +69,7 @@ namespace CalculatorWithCSharpBasics
                 Answer = Console.ReadLine();
                 if (Answer.ToLower() != "y" && Answer.ToLower() != "yes")
                 {
-                    Console.Write("Are Sure? if you want to continue enter (y): ");
+                    Console.Write("Are Sure? if you want to continue enter (y/yes): ");
                     Answer = Console.ReadLine();
                 }
             }
