@@ -20,45 +20,42 @@ namespace CalculatorWithCSharpBasics
                 while (!double.TryParse(Console.ReadLine(), out num2))
                 {
                     Console.Write("Enter a valid input please for the second number : ");
-                }
-                while (true)
-                {
-                    Console.Write("Enter the operator (/,+,-,*):");
-                    string Operator = Console.ReadLine();
+                }            
+                Console.Write("Enter the operator (/,+,-,*):");
+                string Operator = Console.ReadLine();
 
-                    switch (Operator)
-                    {
-                        case "+":
-                            res = num1 + num2;
-                            Console.WriteLine("Addition: " + res);
+                switch (Operator)
+                {
+                    case "+":
+                        res = num1 + num2;
+                        Console.WriteLine("Addition: " + res);
+                        break;
+                    case "-":
+                        res = num1 - num2;
+                        Console.WriteLine("Subtraction: " + res);
+                        break;
+                    case "*":
+                        res = num1 * num2;
+                        Console.WriteLine("Multiplication: " + res);
+                        break;
+                    case "/":
+                        if (num2 == 0)
+                        {
+                            Console.WriteLine("cannot divide by zero (-_-).");
                             break;
-                        case "-":
-                            res = num1 - num2;
-                            Console.WriteLine("Subtraction: " + res);
-                            break;
-                        case "*":
-                            res = num1 * num2;
-                            Console.WriteLine("Multiplication: " + res);
-                            break;
-                        case "/":
-                            if (num2 == 0)
-                            {
-                                Console.WriteLine("cannot divide by zero (-_-).");
-                                break;
-                            }
-                            res = num1 / num2;
-                            Console.WriteLine("Division: " + res);
-                            break;
-                        default:
-                            Console.WriteLine("Wrong input!");
-                            break;
-                    }
+                        }
+                        res = num1 / num2;
+                        Console.WriteLine("Division: " + res);
+                        break;
+                    default:
+                        Console.WriteLine("Wrong input!");
+                        break;
                 }                
                 Console.Write("Do you want to continue (y/n):");
                 Answer = Console.ReadLine();
                 if (Answer.ToLower() != "y" && Answer.ToLower() != "yes")
                 {
-                    Console.Write("Are Sure? if you want to continue enter (y/yes): ");
+                    Console.Write("Are you Sure? if you want to continue enter (y/yes): ");
                     Answer = Console.ReadLine();
                 }
             }
